@@ -34,7 +34,7 @@ LEFT JOIN harmonized.orders_v odv
     AND fd.city_name = odv.primary_city
     AND fd.country_desc = odv.country
 WHERE 1=1
-    AND fd.country_desc = 'Germany'
+    AND fd.country_desc = 'DE'
     AND fd.city = 'Hamburg'
     AND fd.yyyy_mm = '2022-02'
 GROUP BY fd.date_valid_std, fd.city_name, fd.country_desc
@@ -71,7 +71,7 @@ SELECT
     MAX(dw.max_wind_speed_100m_mph) AS max_wind_speed_100m_mph
 FROM harmonized.daily_weather_v dw
 WHERE 1=1
-    AND dw.country_desc IN ('Germany')
+    AND dw.country_desc IN ('DE')
     AND dw.city_name = 'Hamburg'
 GROUP BY dw.country_desc, dw.city_name, dw.date_valid_std
 ORDER BY dw.date_valid_std DESC;
